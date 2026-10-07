@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación del Curso</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Evaluación del Curso</h1>
+      <p id="courseName">Curso: Introducción</p>
+    </div>
+    <div class="timer-box">
+      <span>Tiempo restante</span>
+      <strong id="timer">30:00</strong>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Preguntas</h2>
+      <div id="questionNav" class="question-nav"></div>
+
+      <div class="student-card">
+        <p><strong>Estudiante:</strong></p>
+        <p id="studentName">Alumno Demo</p>
+      </div>
+    </aside>
+
+    <section class="exam-card">
+      <div class="question-header">
+        <span id="questionCounter">Pregunta 1 de 1</span>
+        <span class="badge">Selección única</span>
+      </div>
+
+      <h2 id="questionText">Cargando pregunta...</h2>
+
+      <div id="answers" class="answers"></div>
+
+      <div class="actions">
+        <button id="prevBtn" class="btn secondary">Anterior</button>
+        <button id="nextBtn" class="btn primary">Siguiente</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="finishBtn" class="btn danger">Finalizar examen</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
