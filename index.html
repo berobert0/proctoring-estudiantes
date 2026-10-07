@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evaluación del Curso</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación Supervisada</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <h1>Evaluación del Curso</h1>
-      <p id="courseName">Curso: Introducción</p>
+  <div id="startOverlay" class="overlay">
+    <div class="start-card">
+      <div class="shield">🛡️</div>
+      <h1>Evaluación supervisada</h1>
+      <p>Para iniciar debes permitir la cámara y usar la evaluación en pantalla completa.</p>
+      <div class="requirements">
+        <div>✓ Cámara activa durante la evaluación</div>
+        <div>✓ Pantalla completa</div>
+        <div>✓ Cambios de pestaña serán registrados</div>
+        <div>✓ Copiar, pegar e imprimir estarán deshabilitados</div>
+      </div>
+      <label class="consent"><input id="consentCheck" type="checkbox"><span>Acepto las condiciones de supervisión.</span></label>
+      <p id="startError" class="error"></p>
+      <button id="startExamBtn" class="btn primary large" disabled>Iniciar evaluación</button>
     </div>
-    <div class="timer-box">
-      <span>Tiempo restante</span>
-      <strong id="timer">30:00</strong>
+  </div>
+
+  <div id="securityOverlay" class="security-overlay hidden"><div><h2>Evaluación pausada</h2><p>Regresa a esta ventana para continuar.</p></div></div>
+
+  <header class="topbar">
+    <div class="brand"><div class="logo">E</div><div><h1>Evaluación del Curso</h1><p>Curso: Introducción</p></div></div>
+    <div class="top-actions">
+      <div class="security-status"><span id="cameraDot" class="dot off"></span><span id="cameraStatus">Cámara pendiente</span></div>
+      <div class="timer-box"><span>Tiempo restante</span><strong id="timer">30:00</strong></div>
     </div>
   </header>
 
+  <div class="watermark">ALUMNO DEMO • EVALUACIÓN</div>
+
   <main class="layout">
     <aside class="sidebar">
-      <h2>Preguntas</h2>
-      <div id="questionNav" class="question-nav"></div>
-
-      <div class="student-card">
-        <p><strong>Estudiante:</strong></p>
-        <p id="studentName">Alumno Demo</p>
-      </div>
+      <div class="camera-card"><video id="cameraPreview" autoplay playsinline muted></video><div class="camera-label"><span class="live-dot"></span> Supervisión activa</div></div>
+      <div class="student-card"><span class="small-label">Estudiante</span><strong id="studentName">Alumno Demo</strong><span>Código: 000001</span></div>
+      <div class="incident-card"><div><span class="small-label">Incidencias</span><strong id="incidentCount">0</strong></div><span id="securityBadge" class="badge success">Normal</span></div>
+      <h2>Preguntas</h2><div id="questionNav" class="question-nav"></div>
     </aside>
 
     <section class="exam-card">
-      <div class="question-header">
-        <span id="questionCounter">Pregunta 1 de 1</span>
-        <span class="badge">Selección única</span>
-      </div>
-
+      <div class="question-header"><span id="questionCounter">Pregunta 1 de 1</span><span class="badge info">Selección única</span></div>
       <h2 id="questionText">Cargando pregunta...</h2>
-
       <div id="answers" class="answers"></div>
-
-      <div class="actions">
-        <button id="prevBtn" class="btn secondary">Anterior</button>
-        <button id="nextBtn" class="btn primary">Siguiente</button>
-      </div>
+      <div class="actions"><button id="prevBtn" class="btn secondary">Anterior</button><button id="nextBtn" class="btn primary">Siguiente</button></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <button id="finishBtn" class="btn danger">Finalizar examen</button>
-  </footer>
-
+  <footer class="footer"><div class="security-note">🔒 Sesión supervisada · Los eventos de seguridad quedan registrados</div><button id="finishBtn" class="btn danger">Finalizar examen</button></footer>
+  <div id="toast" class="toast"></div>
   <script src="app.js"></script>
+  <script src="proctoring.js"></script>
 </body>
 </html>
