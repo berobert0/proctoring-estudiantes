@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación Supervisada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="startOverlay" class="overlay">
+    <div class="start-card">
+      <div class="shield">🛡️</div>
+      <h1>Evaluación supervisada</h1>
+      <p id="examIntro">Cargando evaluación...</p>
+      <div class="requirements">
+        <div>✓ Cámara activa durante la evaluación</div>
+        <div>✓ Pantalla completa</div>
+        <div>✓ Cambios de pestaña serán registrados en servidor</div>
+        <div>✓ Las incidencias serán evidencias para revisión docente</div>
+      </div>
+      <label class="consent">
+        <input id="consentCheck" type="checkbox">
+        <span>Acepto las condiciones de supervisión y el registro de incidencias.</span>
+      </label>
+      <p id="startError" class="error"></p>
+      <button id="startExamBtn" class="btn primary large" disabled>Iniciar evaluación</button>
+    </div>
+  </div>
+
+  <div id="securityOverlay" class="security-overlay hidden">
+    <div><h2>Evaluación pausada</h2><p>Regresa a esta ventana para continuar.</p></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">E</div>
+      <div><h1 id="examTitle">Evaluación</h1><p id="courseTitle">Curso</p></div>
+    </div>
+    <div class="top-actions">
+      <button id="logoutBtn" class="btn secondary">Salir</button>
+      <div class="security-status"><span id="cameraDot" class="dot off"></span><span id="cameraStatus">Cámara pendiente</span></div>
+      <div class="timer-box"><span>Tiempo restante</span><strong id="timer">--:--</strong></div>
+    </div>
+  </header>
+
+  <div id="watermark" class="watermark"></div>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="camera-card">
+        <video id="cameraPreview" autoplay playsinline muted></video>
+        <div class="camera-label"><span class="live-dot"></span> Supervisión activa</div>
+      </div>
+      <div class="student-card">
+        <span class="small-label">Estudiante</span>
+        <strong id="studentName">Cargando...</strong>
+        <span id="studentCode"></span>
+      </div>
+      <div class="incident-card">
+        <div><span class="small-label">Incidencias</span><strong id="incidentCount">0</strong></div>
+        <span id="securityBadge" class="badge success">Normal</span>
+      </div>
+      <h2>Preguntas</h2>
+      <div id="questionNav" class="question-nav"></div>
+    </aside>
+
+    <section class="exam-card">
+      <div class="question-header">
+        <span id="questionCounter">Pregunta</span>
+        <span class="badge info">Selección única</span>
+      </div>
+      <h2 id="questionText">Cargando pregunta...</h2>
+      <div id="answers" class="answers"></div>
+      <div class="actions">
+        <button id="prevBtn" class="btn secondary">Anterior</button>
+        <button id="nextBtn" class="btn primary">Siguiente</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="security-note">🔒 Sesión supervisada · eventos y respuestas sincronizados con servidor</div>
+    <button id="finishBtn" class="btn danger">Finalizar examen</button>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script src="proctoring.js"></script>
+</body>
+</html>

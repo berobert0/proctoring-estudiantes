@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acceso · Evaluación Supervisada</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .login-shell{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#eef4ff,#f8fafc)}
+    .login-card{width:min(460px,100%);background:#fff;border:1px solid #e3e8ef;border-radius:18px;padding:28px;box-shadow:0 20px 55px rgba(16,24,40,.12)}
+    .login-card h1{margin:8px 0 4px}.login-card p{color:#667085}
+    .field{display:grid;gap:6px;margin:14px 0}.field label{font-size:12px;font-weight:700}.field input{padding:12px;border:1px solid #d0d5dd;border-radius:9px;font-size:14px}
+    .login-error{color:#b42318;min-height:20px;font-size:13px}.login-note{margin-top:16px;padding:12px;background:#f8fafc;border-radius:10px;font-size:12px;line-height:1.5;color:#667085}
+  </style>
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-card">
+      <div class="shield">🛡️</div>
+      <h1>Ingreso al sistema</h1>
+      <p>Evaluación supervisada · acceso por rol</p>
+      <form id="loginForm">
+        <div class="field"><label>Usuario / código</label><input id="loginId" autocomplete="username" required></div>
+        <div class="field"><label>Contraseña</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <div id="loginError" class="login-error"></div>
+        <button id="loginBtn" class="btn primary large" type="submit">Ingresar</button>
+      </form>
+      <div class="login-note">
+        La sesión se valida en el servidor. Estudiantes y profesores reciben permisos diferentes.
+      </div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

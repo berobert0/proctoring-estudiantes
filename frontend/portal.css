@@ -1,0 +1,41 @@
+:root{
+  --portal-navy:#071c2f;
+  --portal-blue:#0f6eb5;
+  --portal-cyan:#e8f6ff;
+  --portal-border:#dce7ef;
+  --portal-muted:#6b7d8d;
+  --portal-success:#15825f;
+}
+body{background:linear-gradient(180deg,#f7fbfe,#eef4f8);user-select:auto;-webkit-user-select:auto}
+.portal-header{background:linear-gradient(135deg,#071c2f,#0d4267 65%,#126da7);color:#fff;box-shadow:0 10px 30px rgba(4,28,48,.18)}
+.portal-header-inner{max-width:1240px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.portal-brand{display:flex;align-items:center;gap:13px}.portal-logo{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:#fff;color:#0c5685;font-weight:900}
+.portal-brand h1{margin:0;font-size:20px}.portal-brand p{margin:3px 0 0;font-size:11px;opacity:.78}.portal-secure{font-size:11px;opacity:.85}
+.portal-main{max-width:1240px;margin:0 auto;padding:40px 22px 60px}
+.welcome-panel{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(340px,.7fr);gap:34px;align-items:center;min-height:590px}
+.eyebrow{font-size:10px;letter-spacing:.13em;font-weight:900;color:#2884bc}
+.welcome-copy h2{font-size:42px;line-height:1.08;margin:12px 0 15px;color:#0c2b43;letter-spacing:-.03em;max-width:720px}
+.welcome-copy>p{max-width:650px;color:var(--portal-muted);font-size:15px;line-height:1.65}
+.course-showcase{display:grid;gap:10px;margin-top:27px;max-width:680px}
+.course-chip{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.8);border:1px solid var(--portal-border);padding:12px 14px;border-radius:13px;box-shadow:0 6px 18px rgba(16,46,70,.05)}
+.course-chip>span{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--portal-cyan);color:#1375ae;font-weight:900}
+.course-chip div{display:grid;gap:3px}.course-chip b{font-size:12px;color:#17364e}.course-chip small{color:#7b8d9b}
+.access-card{background:#fff;border:1px solid var(--portal-border);border-radius:22px;padding:28px;box-shadow:0 25px 70px rgba(20,51,75,.13)}
+.access-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#e8f6ff,#d8edfb);font-size:23px}
+.access-card h3{font-size:20px;margin:18px 0 5px;color:#14334c}.access-card>p{margin:0 0 20px;color:var(--portal-muted);font-size:13px}
+.portal-label{display:block;font-size:11px;font-weight:850;color:#40586a;margin-bottom:7px}.dni-input-wrap{display:flex;align-items:center;border:1px solid #cfdce6;border-radius:11px;padding:0 12px;background:#fff}
+.dni-input-wrap input{border:0;outline:none;width:100%;padding:13px 10px;font-size:16px;letter-spacing:.08em}.field-help{font-size:10px!important;margin:6px 0 10px!important;color:#81909c!important}
+.portal-error{min-height:20px;color:#b42318;font-size:11px}.portal-btn{border:0;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
+.portal-btn.primary{width:100%;background:linear-gradient(180deg,#1684ca,#0f639d);color:#fff;box-shadow:0 8px 18px rgba(15,99,157,.2)}
+.portal-btn.ghost{background:#f2f7fa;color:#3f5d72}.privacy-note{margin-top:16px;padding:11px 12px;border-radius:10px;background:#f6fafc;color:#718392;font-size:10px;line-height:1.45}
+.student-panel{background:#fff;border:1px solid var(--portal-border);border-radius:22px;padding:26px;box-shadow:0 20px 55px rgba(20,51,75,.09)}
+.student-hero{display:flex;align-items:center;gap:15px;padding-bottom:20px;border-bottom:1px solid #e7eef3}.student-avatar{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#147ab7,#0e4f7c);color:#fff;font-size:20px;font-weight:900}
+.student-hero h2{margin:5px 0 3px;color:#12324b}.student-hero p{margin:0;color:#778896;font-size:12px}.student-hero .portal-btn{margin-left:auto}
+.identity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:20px 0}.identity-item{padding:13px;border:1px solid #e2eaf0;border-radius:12px;background:#fbfdfe}.identity-item span{display:block;font-size:9px;text-transform:uppercase;color:#83919d;font-weight:850;letter-spacing:.08em}.identity-item strong{display:block;margin-top:5px;font-size:12px;color:#223f55}.status-ok{color:var(--portal-success)!important}
+.exams-heading{display:flex;align-items:center;justify-content:space-between;margin:28px 0 12px}.exams-heading h3{margin:5px 0 0;color:#17364e}.count-badge{display:grid;place-items:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;background:#e9f5fc;color:#1579b6;font-weight:900}
+.exam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px}.exam-card-portal{border:1px solid #dce7ef;border-radius:15px;padding:16px;background:linear-gradient(145deg,#fff,#f9fcfe);box-shadow:0 7px 18px rgba(21,50,72,.05)}
+.exam-card-portal h4{margin:7px 0;color:#18384f}.exam-card-portal p{color:#748694;font-size:11px;line-height:1.5}.exam-meta{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.exam-meta span{font-size:9px;padding:5px 7px;border-radius:999px;background:#edf5fa;color:#47667a}
+.no-exams{text-align:center;padding:32px;color:#758695;border:1px dashed #cfdae3;border-radius:14px}.hidden{display:none!important}
+.portal-footer{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:22px;color:#80909d;font-size:10px}
+@media(max-width:900px){.welcome-panel{grid-template-columns:1fr;min-height:auto}.welcome-copy h2{font-size:34px}.identity-grid{grid-template-columns:1fr 1fr}.access-card{max-width:560px}}
+@media(max-width:560px){.portal-header-inner{align-items:flex-start}.portal-secure{display:none}.welcome-copy h2{font-size:30px}.identity-grid{grid-template-columns:1fr}.student-hero{align-items:flex-start;flex-wrap:wrap}.student-hero .portal-btn{margin-left:0}.portal-main{padding:24px 14px 45px}}

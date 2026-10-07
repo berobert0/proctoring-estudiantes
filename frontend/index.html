@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portal de Evaluaciones · Electricidad Industrial</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <header class="portal-header">
+    <div class="portal-header-inner">
+      <div class="portal-brand">
+        <div class="portal-logo">EI</div>
+        <div>
+          <h1>Portal de Evaluaciones</h1>
+          <p>Electricidad Industrial · IESTP Carlos Cueto Fernandini</p>
+        </div>
+      </div>
+      <div class="portal-secure">🔒 Acceso seguro</div>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <section class="welcome-panel">
+      <div class="welcome-copy">
+        <span class="eyebrow">EVALUACIÓN ACADÉMICA SUPERVISADA</span>
+        <h2>Ingresa con tu DNI y continúa con tu evaluación</h2>
+        <p>
+          El sistema verificará tu matrícula, mostrará tus datos académicos y
+          habilitará únicamente los exámenes disponibles para tus cursos.
+        </p>
+
+        <div class="course-showcase">
+          <article class="course-chip">
+            <span>01</span>
+            <div>
+              <b>Mantenimiento de Sistemas de Control Automáticos</b>
+              <small>Electricidad Industrial</small>
+            </div>
+          </article>
+
+          <article class="course-chip">
+            <span>02</span>
+            <div>
+              <b>Proyecto de Sistemas de Iluminación</b>
+              <small>Electricidad Industrial</small>
+            </div>
+          </article>
+
+          <article class="course-chip">
+            <span>03</span>
+            <div>
+              <b>Proyecto de Sistemas de Automatización Industrial</b>
+              <small>Turno diurno / nocturno</small>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="access-card" id="lookupCard">
+        <div class="access-icon">👤</div>
+        <h3>Identificación del estudiante</h3>
+        <p>Ingresa tu DNI para verificar tus datos.</p>
+
+        <form id="dniLookupForm">
+          <label class="portal-label" for="dniInput">DNI</label>
+          <div class="dni-input-wrap">
+            <span>PE</span>
+            <input
+              id="dniInput"
+              inputmode="numeric"
+              maxlength="8"
+              minlength="8"
+              autocomplete="username"
+              placeholder="Ej. 12345678"
+              required
+            >
+          </div>
+
+          <p class="field-help">Debe contener 8 dígitos.</p>
+          <div id="lookupError" class="portal-error"></div>
+
+          <button id="lookupBtn" class="portal-btn primary" type="submit">
+            Verificar estudiante
+          </button>
+        </form>
+
+        <div class="privacy-note">
+          <b>Privacidad:</b> tus datos se muestran solo para confirmar tu identidad y acceso académico.
+        </div>
+      </div>
+    </section>
+
+    <section id="studentPanel" class="student-panel hidden">
+      <div class="student-hero">
+        <div class="student-avatar" id="studentInitials">--</div>
+
+        <div>
+          <span class="eyebrow">ESTUDIANTE VERIFICADO</span>
+          <h2 id="studentFullName">Estudiante</h2>
+          <p id="studentMeta"></p>
+        </div>
+
+        <button id="changeStudentBtn" class="portal-btn ghost">
+          Cambiar estudiante
+        </button>
+      </div>
+
+      <div class="identity-grid">
+        <div class="identity-item">
+          <span>DNI</span>
+          <strong id="studentDni">—</strong>
+        </div>
+
+        <div class="identity-item">
+          <span>Código</span>
+          <strong id="studentCode">—</strong>
+        </div>
+
+        <div class="identity-item">
+          <span>Carrera</span>
+          <strong>Electricidad Industrial</strong>
+        </div>
+
+        <div class="identity-item">
+          <span>Estado</span>
+          <strong class="status-ok">Habilitado</strong>
+        </div>
+      </div>
+
+      <div class="exams-heading">
+        <div>
+          <span class="eyebrow">MIS EVALUACIONES</span>
+          <h3>Exámenes disponibles</h3>
+        </div>
+
+        <span id="examCount" class="count-badge">0</span>
+      </div>
+
+      <div id="examGrid" class="exam-grid"></div>
+
+      <div id="noExams" class="no-exams hidden">
+        No tienes evaluaciones disponibles en este momento.
+      </div>
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <span>IESTP Carlos Cueto Fernandini</span>
+    <span>·</span>
+    <span>Electricidad Industrial</span>
+    <span>·</span>
+    <span>Evaluación supervisada</span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
