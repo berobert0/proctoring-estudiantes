@@ -18,7 +18,7 @@ form.addEventListener("submit",async e=>{
     const data=await res.json().catch(()=>({}));
     if(!res.ok) throw new Error(data.error||"No se pudo iniciar sesión");
     Auth.setSession(data);
-    location.href=data.user.role==="teacher"?"teacher.html":"index.html";
+    location.href=data.user.role==="teacher"?"teacher.html":"exam.html";
   }catch(err){
     errorBox.textContent=err.message;
   }finally{

@@ -92,7 +92,7 @@ async function startStudentLogin(dni,examId){
     if(!res.ok)throw new Error(data.error||"No se pudo iniciar sesión");
     if(data.user.role!=="student")throw new Error("Este acceso no corresponde a un estudiante");
     Auth.setSession({...data,selectedExamId:Number(examId)});
-    location.href="index.html";
+    location.href="exam.html";
   }catch(err){
     alert(err.message);
   }
